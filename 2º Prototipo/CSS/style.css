@@ -1,0 +1,253 @@
+body{
+    margin: 1.5em;
+    font-family: 'Poppins' sans-serif;
+    background-color: #151016;
+}
+
+a{
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.imgTopo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(/Img/Act\ 1\ 4K\ \(16\).jpg);
+    background-size: cover;
+    background-position-x: 20%;
+    background-position-y: 20%;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    animation: introLoad 2s forwards;
+    /* overflow:hidden; */
+}
+
+.logo{
+    color: #C0BAC2;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.logo span{
+    color: gray;
+}
+
+nav{
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: white;
+    height: 100vh;
+    width: 50%;
+    z-index: 999;
+    text-transform: uppercase;
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
+
+    
+}
+
+nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin-top: 8em;
+}
+
+/* botão lateral de slide */
+nav ul a{
+    color: black;
+    padding: .75em 2em;
+    display: block;
+    font-size: 20px;
+}
+
+nav ul a:hover{
+    background-color: rgb(235, 235, 235);
+}
+
+.close{
+    float: right;
+    margin: 2em;
+    width: 2em;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+header svg {
+    width: 2em;
+    margin-top: -.6em;
+    cursor: pointer;
+}
+
+h1{
+    font-size: 5rem;
+    margin-top: 2em;
+    line-height: 4rem;
+}
+
+.subTopo{
+    font-size: 1.4rem;
+}
+
+section.tituloTopo{
+    color: white;
+    height: 90vh;
+    animation: moveDown 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+.informacao img{
+    width: 800px;
+    object-fit: cover;
+    height: 400px;
+}
+
+.informacao h1{
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.informacao p{
+    color: white;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    text-align: justify;
+}
+
+.open-nav{
+    transform: translateX(0%);
+}
+
+@media only screen and (min-width: 680px) {
+
+    body {
+        margin: 1.5em 5em;
+        font-family: 'Poppins', sans-serif;
+    }
+
+}
+
+@media only screen and (min-width: 920px) {
+    
+    .menu{
+        display: none;
+    }
+
+    nav{
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        width: auto;
+        height: auto;
+        background: none;
+    }
+
+    nav svg.close{
+        display: none;
+    }
+
+    nav ul{
+        display: flex;
+        margin: 0;
+    }
+
+    nav ul a{
+        color: #C0BAC2;
+        padding: .5em 1.5em;
+        font-size: 1.5rem;
+    }
+
+    nav ul a:hover{
+        background: none;
+        text-decoration: underline;
+    }
+
+    .imgTopo{
+        left: unset;
+        right: 0;
+        width: 50%;
+        height: 42em;
+    }
+
+
+    .logo {
+        color: whitesmoke;
+    }
+
+    .logo span{
+        color: gray;
+    }
+
+    .feature{
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 3em;
+        margin-bottom: 8em;
+    }
+
+    .feature img{
+        width: 25em;
+    }
+
+    .feature .conteudo{
+        text-align: right;
+        width: 25em;
+    }
+
+    .feature.left{
+        grid-template-areas: "left right";
+    }
+
+    .feature.left img{
+        grid-area: left;
+    }
+
+    .feature.left.conteudo{
+        text-align: left;
+        width: 25em;
+        justify-self: left;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .imgTopo{
+        width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .conteudo{
+        gap: 0; 
+    }
+
+}
+
+
+/*
+    Retirado do site abaixo a Animação
+https://bennettfeely.com/clippy/*/
+@keyframes introLoad {
+    from{
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes moveDown {
+    from{
+        transform: translateY(-100px);
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
